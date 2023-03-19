@@ -10,7 +10,6 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.BindingResult;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServlet;
 
 public abstract class BaseService {
 
@@ -73,7 +72,7 @@ public abstract class BaseService {
         return strReverse;
     }
 
-    protected String getTokenFromRequest(HttpServlet httpServlet) {
-
-    }
+//    protected String getTokenFromRequest(HttpServlet httpServlet) {
+//
+//    }
 }

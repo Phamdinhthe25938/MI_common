@@ -32,6 +32,13 @@ public class SystemMessageCode {
      */
     final public class AuthService {
         /**
+         * ---------------  Validate token ----------
+         */
+
+        public final static String CODE_TOKEN_FAIL = "TKF_999";
+        public final static String MESSAGE_TOKEN_FAIL = "message.toke.fail";
+
+        /**
          * ----------------  Login -------------------
          */
 
