@@ -10,7 +10,7 @@ public class Constants {
          * ======  JWT
          */
         public final static String AUTHORIZATION = "Authorization";
-        public final static String BEARER = "Bearer  ";
+        public final static String BEARER = "Bearer ";
         public static final String KEY_PRIVATE = "abc12345674";
 
         public static final long EXPIRE_TIME = 86400000000L;

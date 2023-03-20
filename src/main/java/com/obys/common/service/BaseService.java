@@ -1,5 +1,6 @@
 package com.obys.common.service;
 
+import com.obys.common.constant.Constants;
 import com.obys.common.exception.HasErrorException;
 import com.obys.common.model.payload.response.BaseResponse;
 import com.obys.common.system_message.SystemMessageCode;
@@ -10,6 +11,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.BindingResult;
 
 import javax.annotation.Resource;
+import java.util.Random;
 
 public abstract class BaseService {
 
@@ -24,7 +26,7 @@ public abstract class BaseService {
 
     protected void hasError(BindingResult result) {
         if (result.hasErrors()) {
-            String message = result.getAllErrors().get(0).getDefaultMessage();
+            String message = result.getFieldErrors().get(0).getField() + " " + result.getAllErrors().get(0).getDefaultMessage();
             throw new HasErrorException(messageV1Exception(SystemMessageCode.AuthService.CODE_ANNOTATION_INVALID, message));
         }
     }
@@ -49,7 +51,7 @@ public abstract class BaseService {
         return code + "<-->" + field + "<-->" + message;
     }
 
-    protected static String removeAccent(String str) {
+    protected String removeAccent(String str) {
         str = str.replaceAll("[àáạảãâầấậẩẫăằắặẳẵ]", "a");
         str = str.replaceAll("[èéẹẻẽêềếệểễ]", "e");
         str = str.replaceAll("[ìíịỉĩ]", "i");
@@ -72,7 +74,22 @@ public abstract class BaseService {
         return strReverse;
     }
 
-//    protected String getTokenFromRequest(HttpServlet httpServlet) {
-//
-//    }
+    protected String getTokenFromRequestUserKafka(String author) {
+        if (author != null && author.startsWith(Constants.AuthService.BEARER)) {
+            return author.replace(Constants.AuthService.BEARER, "");
+        }
+        return null;
+    }
+
+    protected String randomPassword () {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+
+        for (int i = 0; i < 8; i++) {
+            int index = random.nextInt(characters.length());
+            sb.append(characters.charAt(index));
+        }
+        return sb.toString();
+    }
 }

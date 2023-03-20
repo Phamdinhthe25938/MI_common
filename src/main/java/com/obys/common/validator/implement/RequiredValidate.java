@@ -6,9 +6,9 @@ import com.obys.common.validator.annotation.Required;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class RequiredValidate implements ConstraintValidator<Required, String> {
+public class RequiredValidate implements ConstraintValidator<Required, Object> {
     @Override
-    public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(Object s, ConstraintValidatorContext constraintValidatorContext) {
         return s != null;
     }
 }
