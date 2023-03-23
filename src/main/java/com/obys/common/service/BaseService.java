@@ -74,13 +74,6 @@ public abstract class BaseService {
         return strReverse;
     }
 
-    protected String getTokenFromRequestUserKafka(String author) {
-        if (author != null && author.startsWith(Constants.AuthService.BEARER)) {
-            return author.replace(Constants.AuthService.BEARER, "");
-        }
-        return null;
-    }
-
     protected String randomPassword () {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         StringBuilder sb = new StringBuilder();
