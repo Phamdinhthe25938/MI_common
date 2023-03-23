@@ -99,7 +99,7 @@ public class SystemMessageCode {
         public final static String CODE = "code.employee";
         public final static String ACCOUNT = "account.employee";
         public final static String TELEPHONE = "telephone.employee";
-        public final static String EMAIL = "email.employee";
+        public final static String EMAIL_PERSONAL = "email.employee.personal";
         public final static String NUMBERCCCD = "numberCCCD.employee";
 
 

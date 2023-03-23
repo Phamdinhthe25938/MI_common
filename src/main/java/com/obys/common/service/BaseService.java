@@ -52,6 +52,7 @@ public abstract class BaseService {
     }
 
     protected String removeAccent(String str) {
+        str = str.toLowerCase();
         str = str.replaceAll("[àáạảãâầấậẩẫăằắặẳẵ]", "a");
         str = str.replaceAll("[èéẹẻẽêềếệểễ]", "e");
         str = str.replaceAll("[ìíịỉĩ]", "i");

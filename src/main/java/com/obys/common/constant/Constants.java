@@ -4,6 +4,8 @@ public class Constants {
 
     public final class Common {
         public static final String VTI_TITLE = "VTI";
+
+        public static final String VTI_EMAIL = "@vti.com.vn";
     }
     public final class AuthService {
         /**
