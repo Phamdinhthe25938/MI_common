@@ -4,6 +4,7 @@ import com.obys.common.constant.Constants;
 import com.obys.common.exception.HasErrorException;
 import com.obys.common.model.payload.response.BaseResponse;
 import com.obys.common.system_message.SystemMessageCode;
+import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
@@ -11,12 +12,14 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.BindingResult;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Random;
 
 public abstract class BaseService {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(BaseService.class);
-
+    @Resource
+    private HttpServletRequest httpServletRequest;
     @Resource
     private MessageSource messageSource;
 
@@ -85,5 +88,14 @@ public abstract class BaseService {
             sb.append(characters.charAt(index));
         }
         return sb.toString();
+    }
+    public String getUUID () {
+        String uuid = httpServletRequest.getHeader(Constants.AuthService.UUID);
+        String codeError = "ER_UUID";
+        String messageError = "UUID is not empty";
+        if (ObjectUtils.isEmpty(uuid)) {
+            throw new HasErrorException(messageV1Exception(codeError, messageError));
+        }
+        return uuid;
     }
 }
