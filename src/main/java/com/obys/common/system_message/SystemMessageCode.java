@@ -108,7 +108,10 @@ public class SystemMessageCode {
          */
         /**== Employee.Class ==**/
         public final static String CODE_CODE_EXIST = "E_CE_111";
+        public final static String CODE_CODE_NOT_EXIST = "E_CNE_111";
+
         public final static String CODE_ACCOUNT_EXIST = "E_AE_112";
+        public final static String CODE_ACCOUNT_NOT_EXIST = "E_ANE_112";
         public final static String CODE_TELEPHONE_EXIST = "E_TE_113";
         public final static String CODE_EMAIL_EXIST = "E_EE_114";
         public final static String CODE_NUMBERCCCD_EXIST = "E_NCE_115";
