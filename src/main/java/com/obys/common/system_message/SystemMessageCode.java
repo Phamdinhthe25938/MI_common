@@ -22,6 +22,9 @@ public class SystemMessageCode {
         /**
          * ======  error
          */
+
+        public final static String MESSAGE_UUID_IS_NOT_VALID = "uuid.is.not.valid";
+        public final static String CODE_UUID_IS_NOT_VALID = "E_UUID_01";
         public final static String EXIST_IN_SYSTEM = "exist.in.system";
         public final static String NOT_EXIST_IN_SYSTEM = "not.exist.in.system";
 
