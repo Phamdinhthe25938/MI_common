@@ -20,5 +20,7 @@ public class Constants {
         public static final String KEY_PRIVATE = "abc12345674";
         public static final long EXPIRE_TIME = 86400000000L;
 
+        public static final String ROLE = "Role";
+
     }
 }
