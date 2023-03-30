@@ -1,6 +1,5 @@
 package com.obys.common.model.payload.response;
 
-import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,11 +16,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BaseResponse<T> {
 
-    private String code;
+  private String code;
 
-    private String message;
+  private String message;
 
-    private T data;
+  private T data;
 
-    private long responseTime = System.currentTimeMillis();
+  private long responseTime = System.currentTimeMillis();
 }

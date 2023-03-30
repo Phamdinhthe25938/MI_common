@@ -1,10 +1,10 @@
 package com.obys.common.config.i18n;
 
-import java.util.Locale;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Locale;
 
 /**
  * The type Smart locale resolver.

@@ -1,12 +1,7 @@
 package com.obys.common.helper;
 
-import com.google.common.base.CaseFormat;
-import com.obys.common.constant.Constants;
-
-import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * The type String helper.

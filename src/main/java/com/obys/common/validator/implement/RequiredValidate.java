@@ -7,8 +7,8 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class RequiredValidate implements ConstraintValidator<Required, Object> {
-    @Override
-    public boolean isValid(Object s, ConstraintValidatorContext constraintValidatorContext) {
-        return s != null;
-    }
+  @Override
+  public boolean isValid(Object s, ConstraintValidatorContext constraintValidatorContext) {
+    return s != null;
+  }
 }

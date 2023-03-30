@@ -6,12 +6,12 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class PhoneValidate implements ConstraintValidator<Phone, String> {
-    @Override
-    public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
-        String phoneNumberRegex = "^0\\d{8}$";
-        if (s == null) {
-            return false;
-        }
-        return s.matches(phoneNumberRegex);
+  @Override
+  public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
+    String phoneNumberRegex = "^0\\d{8}$";
+    if (s == null) {
+      return false;
     }
+    return s.matches(phoneNumberRegex);
+  }
 }

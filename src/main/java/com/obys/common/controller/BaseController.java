@@ -1,6 +1,5 @@
 package com.obys.common.controller;
 
-import com.obys.common.model.payload.response.BaseResponse;
 import com.obys.common.service.BaseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,13 +10,13 @@ import javax.annotation.Resource;
 
 public abstract class BaseController {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(BaseService.class);
+  public static final Logger LOGGER = LoggerFactory.getLogger(BaseService.class);
 
-    @Resource
-    private MessageSource messageSource;
+  @Resource
+  private MessageSource messageSource;
 
-    protected String getMessage(String key, Object... object) {
-        return messageSource.getMessage(key, object, LocaleContextHolder.getLocale());
-    }
+  protected String getMessage(String key, Object... object) {
+    return messageSource.getMessage(key, object, LocaleContextHolder.getLocale());
+  }
 
 }

@@ -4,11 +4,11 @@ import java.util.Date;
 
 public interface IBaseDataRepository {
 
-    String getCreatedBy();
+  String getCreatedBy();
 
-    Date getCreatedDate();
+  Date getCreatedDate();
 
-    String getUpdatedBy();
+  String getUpdatedBy();
 
-    Date getUpdatedDate();
+  Date getUpdatedDate();
 }

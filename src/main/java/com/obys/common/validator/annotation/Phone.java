@@ -1,6 +1,5 @@
 package com.obys.common.validator.annotation;
 
-import com.obys.common.validator.implement.GmailValidate;
 import com.obys.common.validator.implement.PhoneValidate;
 
 import javax.validation.Constraint;
@@ -9,7 +8,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 
@@ -17,9 +15,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Constraint(validatedBy = {PhoneValidate.class})
 public @interface Phone {
-    String message();
+  String message();
 
-    Class<?>[] groups() default {};
+  Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default {};
+  Class<? extends Payload>[] payload() default {};
 }
