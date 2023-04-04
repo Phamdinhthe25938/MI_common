@@ -22,9 +22,8 @@ public class SystemMessageCode {
     /**
      * ======  error
      */
-
-    public final static String MESSAGE_UUID_IS_NOT_VALID = "uuid.is.not.valid";
     public final static String CODE_UUID_IS_NOT_VALID = "E_UUID_01";
+    public final static String MESSAGE_UUID_IS_NOT_VALID = "uuid.is.not.valid";
     public final static String EXIST_IN_SYSTEM = "exist.in.system";
     public final static String NOT_EXIST_IN_SYSTEM = "not.exist.in.system";
 
@@ -117,10 +116,10 @@ public class SystemMessageCode {
 
 
     /**
-     * ======  code #_111
+     * ======  code
      */
     /**
-     * == Employee.Class ==
+     * == Employee.Class #_111 ==
      **/
     public final static String CODE_CODE_EXIST = "E_CE_111";
     public final static String CODE_CODE_NOT_EXIST = "E_CNE_111";
@@ -130,5 +129,12 @@ public class SystemMessageCode {
     public final static String CODE_TELEPHONE_EXIST = "E_TE_113";
     public final static String CODE_EMAIL_EXIST = "E_EE_114";
     public final static String CODE_NUMBERCCCD_EXIST = "E_NCE_115";
+
+    /**
+     * == TimeScan.class #_222 ==
+     */
+    public final static String CODE_ACCOUNT_NOT_MATCH = "E_222";
+    public final static String MESSAGE_ACCOUNT_NOT_MATCH = "account.not.match";
   }
+
 }

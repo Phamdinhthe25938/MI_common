@@ -96,8 +96,8 @@ public abstract class BaseService {
     return sb.toString();
   }
 
-  public String getUUID() {
-    String uuid = httpServletRequest.getHeader(Constants.AuthService.UUID);
+  public String getUUID(HttpServletRequest request) {
+    String uuid = request.getHeader(Constants.AuthService.UUID);
     String codeError = "ER_UUID";
     String messageError = "UUID is not empty";
     if (ObjectUtils.isEmpty(uuid)) {
