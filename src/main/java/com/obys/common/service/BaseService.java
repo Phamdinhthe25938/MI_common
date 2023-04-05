@@ -6,6 +6,7 @@ import com.obys.common.exception.ErrorV1Exception;
 import com.obys.common.exception.HasErrorException;
 import com.obys.common.model.payload.response.BaseResponse;
 import com.obys.common.system_message.SystemMessageCode;
+import com.obys.common.validator.regex.RegexHelper;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -135,6 +135,9 @@ public class SystemMessageCode {
      */
     public final static String CODE_ACCOUNT_NOT_MATCH = "E_222";
     public final static String MESSAGE_ACCOUNT_NOT_MATCH = "account.not.match";
+
+    public final static String CODE_VALUE_SALARY_SUBSIDIZE_INVALID = "E_223";
+    public final static String MESSAGE_VALUE_SALARY_SUBSIDIZE_INVALID = "exist.salary.subsidize.invalid";
   }
 
 }
