@@ -1,6 +1,6 @@
 package com.obys.common.validator.regex;
 
-import com.obys.common.exception.ErrorV1Exception;
+import com.obys.common.exception.ErrorV2Exception;
 import com.obys.common.service.BaseService;
 import com.obys.common.system_message.SystemMessageCode;
 
@@ -14,9 +14,8 @@ public class RegexHelper extends BaseService {
     Pattern pattern = Pattern.compile(regex);
     Matcher matcher = pattern.matcher(value);
     if (!matcher.matches()) {
-      throw new ErrorV1Exception(messageV1Exception(
-          SystemMessageCode.EmployeeService.CODE_VALUE_SALARY_SUBSIDIZE_INVALID,
-          SystemMessageCode.EmployeeService.MESSAGE_VALUE_SALARY_SUBSIDIZE_INVALID));
+      throw new ErrorV2Exception(messageV2Exception(SystemMessageCode.RegexMessage.CODE_REGEX_NUMBER,
+          SystemMessageCode.EmployeeService.SALARY_SUBSIDIZE, SystemMessageCode.RegexMessage.MESSAGE_REGEX_NUMBER));
     }
   }
 }
