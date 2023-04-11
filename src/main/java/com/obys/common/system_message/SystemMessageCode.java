@@ -11,7 +11,7 @@ public class SystemMessageCode {
 
   final public class CommonMessage {
     /**
-     * ======  success
+     * ====== code and message success
      */
     public final static String CODE_SUCCESS = "S_00";
     public final static String MESSAGE_SUCCESS = "message.success";
@@ -20,7 +20,7 @@ public class SystemMessageCode {
     public final static String DELETE_SUCCESS = "delete.message.success";
 
     /**
-     * ======  error
+     * ====== code and message error
      */
 
     public final static String MESSAGE_UUID_IS_NOT_VALID = "uuid.is.not.valid";
@@ -28,6 +28,18 @@ public class SystemMessageCode {
     public final static String EXIST_IN_SYSTEM = "exist.in.system";
     public final static String NOT_EXIST_IN_SYSTEM = "not.exist.in.system";
 
+  }
+
+  /**
+   * regex
+   */
+  final public class RegexMessage {
+    /**
+     * ======  code #_888
+     */
+
+    public final static String CODE_REGEX_NUMBER = "E_R_888";
+    public final static String MESSAGE_REGEX_NUMBER = "number.is.required";
   }
 
   /**
@@ -115,9 +127,14 @@ public class SystemMessageCode {
     public final static String EMAIL_PERSONAL = "email.employee.personal";
     public final static String NUMBERCCCD = "numberCCCD.employee";
 
+    /**
+     * == ContactDetail.Class ==
+     **/
+
+    public final static String SALARY_SUBSIDIZE = "salary.subsidize";
 
     /**
-     * ======  code #_111
+     * ======  code and message #_111
      */
     /**
      * == Employee.Class ==
@@ -130,5 +147,8 @@ public class SystemMessageCode {
     public final static String CODE_TELEPHONE_EXIST = "E_TE_113";
     public final static String CODE_EMAIL_EXIST = "E_EE_114";
     public final static String CODE_NUMBERCCCD_EXIST = "E_NCE_115";
+
+    public final static String CODE_ACCOUNT_NOT_MATCH = "E_116";
+    public final static String MESSAGE_ACCOUNT_NOT_MATCH = "account.not.match";
   }
 }
