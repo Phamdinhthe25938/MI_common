@@ -1,6 +1,7 @@
 package com.obys.common.service;
 
 import com.obys.common.constant.Constants;
+import com.obys.common.enums.DaysOfWeekEnum;
 import com.obys.common.enums.RoleEnum;
 import com.obys.common.exception.ErrorV1Exception;
 import com.obys.common.exception.HasErrorException;
@@ -12,11 +13,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.BindingResult;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -108,13 +112,34 @@ public abstract class BaseService {
   }
 
   /**
+   * function calculation month have day not saturday and sunday
+   */
+
+  public Long calculationDayMonth(int month, int year) {
+    YearMonth yearMonth = YearMonth.of(year, month);
+    LocalDate startDate = yearMonth.atDay(1);
+    LocalDate endDate = yearMonth.atEndOfMonth();
+    long dayOfMonth = ChronoUnit.DAYS.between(startDate, endDate) + 1;
+    long weekendDays = startDate.datesUntil(endDate)
+        .filter(date -> date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY)
+        .count();
+    return dayOfMonth - weekendDays;
+  }
+
+  /**
+   * function calculation salary of month
+   */
+  public Double calculationSalaryOfMonth(Long salary, Double workDay, Long workWorkOfMonth) {
+    return (salary / workWorkOfMonth * workDay);
+  }
+  /**
    * Decentralization
    */
   public void checkRole(String url, String role) {
     String[] roles = role.split(",");
     Set<String> roleSet = new HashSet<>(List.of(roles));
-    if (url.contains(Constants.UrlRole.ROLE_ADMIN)) {
-      if (!roleSet.contains(RoleEnum.ROLE_ADMIN.getValue())) {
+    if (url.contains(Constants.UrlRole.ROLE_MANAGER_PERSONAL)) {
+      if (!roleSet.contains(RoleEnum.ROLE_MANAGER_PERSONAL.getValue())) {
         throw new ErrorV1Exception(messageV1Exception(SystemMessageCode.RoleService.CODE_ROLE_NOT_PERMISSION,
             SystemMessageCode.RoleService.MESSAGE_ROLE_NOT_PERMISSION));
       }
