@@ -6,12 +6,16 @@ import com.obys.common.enums.RoleEnum;
 import com.obys.common.exception.ErrorV1Exception;
 import com.obys.common.exception.HasErrorException;
 import com.obys.common.model.payload.response.BaseResponse;
+import com.obys.common.model.payload.response.MetaList;
 import com.obys.common.system_message.SystemMessageCode;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.validation.BindingResult;
 
 import javax.annotation.Resource;
@@ -153,5 +157,32 @@ public abstract class BaseService {
             SystemMessageCode.RoleService.MESSAGE_ROLE_NOT_PERMISSION));
       }
     }
+  }
+  /**
+   * build pageable
+   */
+  public Pageable buildPageable(MetaList metaList) {
+    int page_number_default = 0;
+    int page_size_default = 50;
+    String sort_default = "id";
+    boolean sort_desc_default = true;
+
+    int pageNumber = ObjectUtils.isEmpty(metaList.getPageSize()) ? page_number_default : metaList.getPageSize();
+    int pageSize = ObjectUtils.isEmpty(metaList.getPageNum()) ? page_size_default : metaList.getPageNum();
+    Boolean sortDesc = ObjectUtils.isEmpty(metaList.getSortDesc()) ? sort_desc_default : metaList.getSortDesc();
+    String sortBy = ObjectUtils.isEmpty(metaList.getSortBy()) ? sort_default : metaList.getSortBy();
+    Sort sort = Boolean.TRUE.equals(sortDesc) ? Sort.by(sortBy).descending() : Sort.by(sortBy).ascending();
+
+    return PageRequest.of(pageNumber, pageSize, sort);
+  }
+
+  public MetaList buildMetaList(Pageable pageable, Long total) {
+    return MetaList.builder()
+        .pageNum(pageable.getPageNumber())
+        .pageSize(pageable.getPageSize())
+        .sortBy(pageable.getSort().toString())
+        .sortDesc(pageable.getSort().isSorted())
+        .total(total)
+        .build();
   }
 }
