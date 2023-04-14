@@ -12,7 +12,7 @@ public class ServerSideEntity {
 
   private Integer page = 1;
 
-  private String sortBy;
+  private String sortBy = "id";
 
-  private Boolean sortDesc;
+  private Boolean sortDesc = true;
 }

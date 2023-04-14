@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 public class MetaList {
 
   private Long total;
-  private Integer pageNum;
-  private Integer pageSize;
-  private String sortBy;
-  private Boolean sortDesc;
+  private Integer pageNum = 50;
+  private Integer pageSize = 0;
+  private String sortBy = "id";
+  private Boolean sortDesc = true;
 }
