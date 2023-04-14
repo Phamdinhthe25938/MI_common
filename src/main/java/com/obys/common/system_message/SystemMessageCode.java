@@ -127,11 +127,13 @@ public class SystemMessageCode {
     public final static String EMAIL_PERSONAL = "email.employee.personal";
     public final static String NUMBERCCCD = "numberCCCD.employee";
 
+    public final static String POSITION = "position.employee";
     /**
      * == ContactDetail.Class ==
      **/
 
     public final static String SALARY_SUBSIDIZE = "salary.subsidize";
+
 
     /**
      * ======  code and message #_111
@@ -150,5 +152,15 @@ public class SystemMessageCode {
 
     public final static String CODE_ACCOUNT_NOT_MATCH = "E_116";
     public final static String MESSAGE_ACCOUNT_NOT_MATCH = "account.not.match";
+
+    public final static String CODE_POSITION_NOT_EXIST = "E_117";
+
+    /**
+     * == ContactDetail.Class ==
+     **/
+
+    public final static String CODE_ACCOUNT_NOT_CREATE_CONTRACT= "E_118";
+
+    public final static String MESSAGE_ACCOUNT_NOT_CREATE_CONTRACT= "account.not.create.contract";
   }
 }

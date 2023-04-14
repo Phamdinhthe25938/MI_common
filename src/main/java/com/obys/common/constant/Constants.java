@@ -1,7 +1,6 @@
 package com.obys.common.constant;
 
 import java.time.LocalTime;
-import java.util.Date;
 
 public class Constants {
 
@@ -15,7 +14,8 @@ public class Constants {
   public final static long TIME_OFFICE = 8;
 
   public final class UrlRole {
-    public static final String ROLE_ADMIN = "/api/admin";
+    public static final String ROLE_MANAGER_PERSONAL = "/api/manager-personal";
+    public static final String ROLE_ALL = "/api/all";
     public static final String ROLE_EMPLOYEE = "/api/employee";
     public static final String ROLE_USER = "/api/user";
   }

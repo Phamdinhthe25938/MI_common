@@ -9,13 +9,13 @@ import java.util.regex.Pattern;
 
 public class RegexHelper extends BaseService {
 
-  public void regexNumber(String value) {
+  public void regexNumber(String value, String field) {
     String regex = "[0-9]*";
     Pattern pattern = Pattern.compile(regex);
     Matcher matcher = pattern.matcher(value);
     if (!matcher.matches()) {
       throw new ErrorV2Exception(messageV2Exception(SystemMessageCode.RegexMessage.CODE_REGEX_NUMBER,
-          SystemMessageCode.EmployeeService.SALARY_SUBSIDIZE, SystemMessageCode.RegexMessage.MESSAGE_REGEX_NUMBER));
+          field, SystemMessageCode.RegexMessage.MESSAGE_REGEX_NUMBER));
     }
   }
 }

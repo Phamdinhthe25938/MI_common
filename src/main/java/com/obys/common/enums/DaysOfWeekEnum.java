@@ -1,21 +1,23 @@
 package com.obys.common.enums;
 
-public enum RoleEnum {
+public enum DaysOfWeekEnum {
 
-  ROLE_MANAGER_PERSONAL(1, "ROLE_MANAGER_PERSONAL"),
-
-  ROLE_EMPLOYEE(2, "ROLE_EMPLOYEE"),
-
-  ROLE_USER(3, "ROLE_USER");
-
-  RoleEnum(int code, String value) {
-    this.code = code;
-    this.value = value;
-  }
+  SUNDAY(0, "SUNDAY"),
+  MONDAY(1, "MONDAY"),
+  TUESDAY(2, "TUESDAY"),
+  WEDNESDAY(3, "WEDNESDAY"),
+  THURSDAY(4, "THURSDAY"),
+  FRIDAY(5, "FRIDAY"),
+  SATURDAY(6, "SATURDAY");
 
   private int code;
 
   private String value;
+
+  DaysOfWeekEnum(int code, String value) {
+    this.code = code;
+    this.value = value;
+  }
 
   public int getCode() {
     return code;
