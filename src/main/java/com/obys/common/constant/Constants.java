@@ -4,10 +4,18 @@ import java.time.LocalTime;
 
 public class Constants {
 
+  public final class Notification {
+    public final static String TITLE_LOG_VACATION = "Log vacation day";
+    public final static String CONTENT_LOG_VACATION = " '%s' want you approve request log vacation";
+  }
+
   public final class TimeRegulations {
     public final static long TIME_OFFICE = 8;
-    public final static LocalTime WORK_START_TIME = LocalTime.of(8, 30, 0);
-    public final static LocalTime WORK_END_TIME = LocalTime.of(17, 30, 0);
+    public final static LocalTime WORK_START_TIME_DAY = LocalTime.of(8, 30, 0);
+
+    public final static LocalTime WORK_END_TIME_MORNING = LocalTime.of(12, 0, 0);
+    public final static LocalTime WORK_START_TIME_AFTERNOON = LocalTime.of(13, 0, 0);
+    public final static LocalTime WORK_END_TIME_DAY = LocalTime.of(17, 30, 0);
 
   }
 

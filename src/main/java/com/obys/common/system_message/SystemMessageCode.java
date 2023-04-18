@@ -15,6 +15,7 @@ public class SystemMessageCode {
      */
     public final static String CODE_SUCCESS = "S_00";
     public final static String MESSAGE_SUCCESS = "message.success";
+    public final static String GET_SUCCESS = "get.message.success";
     public final static String SAVE_SUCCESS = "save.message.success";
     public final static String UPDATE_SUCCESS = "update.message.success";
     public final static String DELETE_SUCCESS = "delete.message.success";
@@ -134,6 +135,12 @@ public class SystemMessageCode {
 
     public final static String SALARY_SUBSIDIZE = "salary.subsidize";
 
+    /**
+     * == LogVacationDay.Class ==
+     **/
+
+    public final static String LOG_VACATION = "log.vacation";
+
 
     /**
      * ======  code and message #_111
@@ -159,8 +166,16 @@ public class SystemMessageCode {
      * == ContactDetail.Class ==
      **/
 
-    public final static String CODE_ACCOUNT_NOT_CREATE_CONTRACT= "E_118";
+    public final static String CODE_ACCOUNT_NOT_CREATE_CONTRACT = "E_118";
 
-    public final static String MESSAGE_ACCOUNT_NOT_CREATE_CONTRACT= "account.not.create.contract";
+    public final static String MESSAGE_ACCOUNT_NOT_CREATE_CONTRACT = "account.not.create.contract";
+
+    /**
+     * == LogVacationDay.Class ==
+     **/
+    public final static String CODE_ID_ASSIGN_NOT_PERMISSION = "E_119";
+    public final static String MESSAGE_ID_ASSIGN_NOT_PERMISSION = "id.assign.not.permission";
+
+    public final static String CODE_LOG_VACATION_NOT_EXIST = "E_120";
   }
 }

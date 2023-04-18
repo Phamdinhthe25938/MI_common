@@ -1,10 +1,10 @@
 package com.obys.common.service;
 
 import com.obys.common.constant.Constants;
-import com.obys.common.enums.DaysOfWeekEnum;
 import com.obys.common.enums.RoleEnum;
 import com.obys.common.exception.ErrorV1Exception;
 import com.obys.common.exception.HasErrorException;
+import com.obys.common.model.CustomUserDetails;
 import com.obys.common.model.payload.response.BaseResponse;
 import com.obys.common.model.payload.response.MetaList;
 import com.obys.common.system_message.SystemMessageCode;
@@ -17,6 +17,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 
 import javax.annotation.Resource;
@@ -168,10 +169,10 @@ public abstract class BaseService {
     String sort_default = "id";
     boolean sort_desc_default = true;
 
-    int pageNumber = ObjectUtils.isEmpty(metaList.getPageSize()) ? page_number_default : metaList.getPageSize();
-    int pageSize = ObjectUtils.isEmpty(metaList.getPageNum()) ? page_size_default : metaList.getPageNum();
-    Boolean sortDesc = ObjectUtils.isEmpty(metaList.getSortDesc()) ? sort_desc_default : metaList.getSortDesc();
-    String sortBy = ObjectUtils.isEmpty(metaList.getSortBy()) ? sort_default : metaList.getSortBy();
+    int pageNumber = ObjectUtils.isEmpty(metaList) || ObjectUtils.isEmpty(metaList.getPageSize()) ? page_number_default : metaList.getPageSize();
+    int pageSize = ObjectUtils.isEmpty(metaList) || ObjectUtils.isEmpty(metaList.getPageNum()) ? page_size_default : metaList.getPageNum();
+    Boolean sortDesc = ObjectUtils.isEmpty(metaList) || ObjectUtils.isEmpty(metaList.getSortDesc()) ? sort_desc_default : metaList.getSortDesc();
+    String sortBy = ObjectUtils.isEmpty(metaList) || ObjectUtils.isEmpty(metaList.getSortBy()) ? sort_default : metaList.getSortBy();
     Sort sort = Boolean.TRUE.equals(sortDesc) ? Sort.by(sortBy).descending() : Sort.by(sortBy).ascending();
 
     return PageRequest.of(pageNumber, pageSize, sort);
@@ -185,5 +186,11 @@ public abstract class BaseService {
         .sortDesc(pageable.getSort().isSorted())
         .total(total)
         .build();
+  }
+  /**
+   * Get CustomUserDetails from contex holder
+   */
+  public CustomUserDetails getCustomUserDetail() {
+    return (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
   }
 }
