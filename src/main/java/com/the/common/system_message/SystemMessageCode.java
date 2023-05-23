@@ -180,5 +180,18 @@ public class SystemMessageCode {
 
     public final static String CODE_STATUS_APPROVE_INVALID = "E_121";
     public final static String MESSAGE_DELETE_LOG_VACATION_INVALID = "log.vacation.is.approve";
+
+    /**
+     * == VacationDay.class ==
+     */
+    public final static String CODE_ID_VACATION_DAY_NOT_EXIST = "E_122";
+    public final static String MESSAGE_ID_VACATION_DAY_NOT_EXIST = "id.vacation.day.not.exist";
+    public final static String CODE_STATUS_VACATION_DAY_NOT_VALID = "E_123";
+    public final static String MESSAGE_STATUS_VACATION_DAY_NOT_VALID = "status.vacation.day.not.valid";
+    public final static String CODE_ID_VACATION_DAY_NOT_MATCH_PERSON = "E_124";
+    public final static String MESSAGE_ID_VACATION_DAY_NOT_MATCH_PERSON = "id.vacation.day.not.match.person";
+
+    public final static String CODE_ID_PERSON_APPROVE_NOT_MATCH = "E_125";
+    public final static String MESSAGE_ID_PERSON_APPROVE_NOT_MATCH = "id.person.approve.not.match";
   }
 }
