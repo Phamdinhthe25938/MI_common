@@ -4,12 +4,12 @@ import java.time.LocalTime;
 
 public class Constants {
 
-  public static final class Notification {
+  public final static class Notification {
     public final static String TITLE_LOG_VACATION = "Log vacation day";
     public final static String CONTENT_LOG_VACATION = " '%s' want you approve request log vacation";
   }
 
-  public static final class TimeRegulations {
+  public final static class TimeRegulations {
     public final static long TIME_OFFICE = 8;
     public final static LocalTime WORK_START_TIME_DAY = LocalTime.of(8, 30, 0);
 
@@ -21,20 +21,20 @@ public class Constants {
 
   public final static long TIME_OFFICE = 8;
 
-  public final class UrlRole {
+  public final static class UrlRole {
     public static final String ROLE_MANAGER_PERSONAL = "/api/manager-personal";
     public static final String ROLE_ALL = "/api/all";
     public static final String ROLE_EMPLOYEE = "/api/employee";
     public static final String ROLE_USER = "/api/user";
   }
 
-  public static final class Common {
+  public final static class Common {
     public static final String VTI_TITLE = "VTI";
 
     public static final String VTI_EMAIL = "@vti.com.vn";
   }
 
-  public static final class AuthService {
+  public final static class AuthService {
     /**
      * UUID
      */

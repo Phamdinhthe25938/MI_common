@@ -34,8 +34,6 @@ public abstract class BaseService {
 
   public static final Logger LOGGER = LoggerFactory.getLogger(BaseService.class);
   @Resource
-  private HttpServletRequest httpServletRequest;
-  @Resource
   private MessageSource messageSource;
 
   public String getMessage(String key, Object... object) {
@@ -143,7 +141,7 @@ public abstract class BaseService {
     String[] roles = role.split(",");
     Set<String> roleSet = new HashSet<>(List.of(roles));
     if (url.contains(Constants.UrlRole.ROLE_MANAGER_PERSONAL)) {
-      if (!roleSet.contains(RoleEnum.ROLE_MANAGER_PERSONAL.getValue())) {
+      if (roleSet.contains(RoleEnum.ROLE_MANAGER_PERSONAL.getValue())) {
         throw new ErrorV1Exception(messageV1Exception(SystemMessageCode.RoleService.CODE_ROLE_NOT_PERMISSION,
             SystemMessageCode.RoleService.MESSAGE_ROLE_NOT_PERMISSION));
       }

@@ -54,6 +54,9 @@ public class SystemMessageCode {
     public final static String CODE_TOKEN_FAIL = "TKF_999";
     public final static String MESSAGE_TOKEN_FAIL = "message.toke.fail";
 
+    public final static String CODE_TOKEN_SUCCESS = "TKF_1000";
+    public final static String MESSAGE_TOKEN_SUCCESS = "message.toke.success";
+
     /**
      * ----------------  Login -------------------
      */
